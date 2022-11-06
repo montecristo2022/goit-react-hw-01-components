@@ -1,5 +1,7 @@
+import PropTypes from 'prop-types';
+
 import { FriendsImg, FriendsWrapper, FriendsStatus, FriendsNameText, OneFriendContainer } from './friendList.styled';
-import styles from './friends.module.css'
+// import styles from './friends.module.css'
 
 export const FriendsList = ({ friends }) => {
   return (
@@ -22,5 +24,25 @@ export const FriendsList = ({ friends }) => {
         </OneFriendContainer>
       ))}
     </FriendsWrapper>
+
+    
   );
 };
+
+
+FriendsList.propTypes = {
+
+  friends: PropTypes.arrayOf(
+    PropTypes.exact({
+      isOnline: PropTypes.bool,
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string,
+      avatar: PropTypes.string,
+    })
+  ),
+};
+
+
+
+
+

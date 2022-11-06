@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { TransactionsHeadingText, TransactionWrapper, TransactionTextTd } from "./transactions.styled"
 
 export const TransactionsList = ({items}) => {
@@ -23,3 +25,21 @@ export const TransactionsList = ({items}) => {
   </tbody>
 </TransactionWrapper>
 }
+
+
+
+
+
+
+
+TransactionsList.propTypes = {
+  items: PropTypes.arrayOf (
+PropTypes.exact({
+  amount: PropTypes.string,
+  type: PropTypes.string,
+  currency: PropTypes.string,
+  id: PropTypes.string
+})
+  )
+}
+
