@@ -10,7 +10,8 @@ export const FriendsList = ({ friends }) => {
 
 
 {/* КАК СДЕЛАТЬ БЕЗ КЛАССНЕЙМ? */}
-          <FriendsStatus className={friend.isOnline ? styles.statisticStatusGreen : styles.statisticStatusRed}></FriendsStatus>
+{/* className={friend.isOnline ? styles.statisticStatusGreen : styles.statisticStatusRed} */}
+          <FriendsStatus isOnline={friend.isOnline}></FriendsStatus>
 
 
 

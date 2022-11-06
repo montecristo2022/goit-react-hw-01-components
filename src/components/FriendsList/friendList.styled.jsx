@@ -9,10 +9,10 @@ background-color: ${props => props.theme.colors.darkkhaki};
 height: 600px;
 width: 250px
 `
-// background-color: ${p =>
-//     p.isOnline ? p.theme.colors.statusGreen : p.theme.colors.statusRed};
-export const FriendsStatus = styled.span`
 
+export const FriendsStatus = styled.span`
+ background-color: ${props =>
+    props.isOnline ? props.theme.colors.statusGreen : props.theme.colors.statusRed};
 border-radius: ${props => props.theme.radii.circle};
 display: block;
 height: 16px;
