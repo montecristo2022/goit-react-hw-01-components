@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-
-
-export const FriendsWrapper = styled.ul`
-background-color: ${props => props.theme.colors.darkkhaki};
-height: 600px;
-width: 250px
-`
-
 export const FriendsImg = styled.img`
 height: 50px;
 `
@@ -32,5 +24,3 @@ margin-left: 30%;
 margin-top: 20px;
 
 `
-
-

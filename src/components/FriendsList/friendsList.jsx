@@ -1,48 +1,31 @@
 import PropTypes from 'prop-types';
+import { FriendsListItem } from 'components/FriendsListItem/FriendsListItem';
 
-import { FriendsImg, FriendsWrapper, FriendsStatus, FriendsNameText, OneFriendContainer } from './friendList.styled';
+import { FriendsWrapper } from './friendList.styled';
 // import styles from './friends.module.css'
 
 export const FriendsList = ({ friends }) => {
   return (
     <FriendsWrapper>
-      {friends.map(friend => (
-        <OneFriendContainer key={friend.id}>
-
-
-
-{/* КАК СДЕЛАТЬ БЕЗ КЛАССНЕЙМ? */}
-{/* className={friend.isOnline ? styles.statisticStatusGreen : styles.statisticStatusRed} */}
-          <FriendsStatus isOnline={friend.isOnline}></FriendsStatus>
-
-
-
-
-
-          <FriendsNameText>{friend.name}</FriendsNameText>
-          <FriendsImg src={friend.avatar} alt="friend"></FriendsImg>
-        </OneFriendContainer>
+      {friends.map(({ id, isOnline, name, avatar }) => (
+        <FriendsListItem
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
+        />
       ))}
     </FriendsWrapper>
-
-    
   );
 };
 
-
 FriendsList.propTypes = {
-
   friends: PropTypes.arrayOf(
     PropTypes.exact({
-      isOnline: PropTypes.bool,
+      isOnline: PropTypes.bool.isRequired,
       id: PropTypes.number.isRequired,
-      name: PropTypes.string,
-      avatar: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      avatar: PropTypes.string.isRequired,
     })
   ),
 };
-
-
-
-
-

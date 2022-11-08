@@ -1,9 +1,15 @@
 import PropTypes from 'prop-types';
 
+import {
+  MainText,
+  ProfileWrapper,
+  ProfileImg,
+  ProfileTextSpan,
+  ProfileTextP,
+  ProfileStatsContainer,
+} from './profile.styled';
 
-import { MainText, ProfileWrapper, ProfileImg, ProfileTextSpan, ProfileTextP, ProfileStatsContainer } from "./profile.styled";
-
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const Profile = ({ username, tag, location, avatar, stats}) => {
   return (
     <ProfileWrapper>
       <div>
@@ -31,20 +37,15 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
   );
 };
 
-
 Profile.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
 
- stats: PropTypes.shape({
-  followers: PropTypes.number,
-  views: PropTypes.number,
-  likes: PropTypes.number,
- })
-    
-}
-
-
-
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
+};
