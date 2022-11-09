@@ -4,7 +4,7 @@ import { HeadingText, StatisticsWrapper, StatisticsTextSpan, OneFriendContainer 
 export const Statistics = ({title, stats }) => {
   return (
     <StatisticsWrapper>
-      <HeadingText>{title? title : 'Upload stats'}</HeadingText>
+      {/* <HeadingText>{title? title : 'Upload stats'}</HeadingText> */}
       {stats.map(({id, label, percentage}) => (
         <OneFriendContainer key={id}>
           <StatisticsTextSpan>{label}</StatisticsTextSpan>

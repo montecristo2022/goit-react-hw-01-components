@@ -9,7 +9,7 @@ import {
   ProfileStatsContainer,
 } from './profile.styled';
 
-export const Profile = ({ username, tag, location, avatar, stats}) => {
+export const Profile = ({ username, tag, location, avatar, stats: {followers, views, likes}}) => {
   return (
     <ProfileWrapper>
       <div>
@@ -22,15 +22,15 @@ export const Profile = ({ username, tag, location, avatar, stats}) => {
       <ProfileStatsContainer>
         <li>
           <ProfileTextSpan>Followers: </ProfileTextSpan>
-          <ProfileTextSpan>{stats.followers}</ProfileTextSpan>
+          <ProfileTextSpan>{followers}</ProfileTextSpan>
         </li>
         <li>
           <ProfileTextSpan>Views: </ProfileTextSpan>
-          <ProfileTextSpan>{stats.views}</ProfileTextSpan>
+          <ProfileTextSpan>{views}</ProfileTextSpan>
         </li>
         <li>
           <ProfileTextSpan>Likes: </ProfileTextSpan>
-          <ProfileTextSpan>{stats.likes}</ProfileTextSpan>
+          <ProfileTextSpan>{likes}</ProfileTextSpan>
         </li>
       </ProfileStatsContainer>
     </ProfileWrapper>
