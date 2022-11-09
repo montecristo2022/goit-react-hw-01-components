@@ -6,9 +6,9 @@ import {
   OneFriendContainer,
 } from './friendLitsItem.styled';
 
-export const FriendsListItem = ({ avatar, name, isOnline, id }) => {
+export const FriendsListItem = ({ avatar, name, isOnline}) => {
   return (
-    <OneFriendContainer key={id}>
+    <OneFriendContainer>
       <FriendsStatus isOnline={isOnline}></FriendsStatus>
 
       <FriendsNameText>{name}</FriendsNameText>
